@@ -4,7 +4,7 @@ namespace Restaurant
 {
     internal class Program
     {
-        static void Main()
+        public void Main()
         {
             Restaurant r = new Restaurant();
             r.ShowMenu();

@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
+    public enum OrderStatus
+    {
+        New,
+        InProgress,
+        Ready,
+        Paid
+    }
     public class Order
     {
-        public enum OrderStatus
-        {
-            New,
-            InProgress,
-            Ready,
-            Paid
-        }
+       
         public int Id { get; }
         public int Table { get; set; }
         public List<Menu> Items { get; set; }
@@ -45,7 +46,7 @@ namespace Restaurant
         {
             Status = newStatus;
         }
-        public override string ToString()
+        public string Output()
         {
             return $"ID: {Id} | Стіл: {Table} | Статус: {Status} | Сума: {GetTotalPrice()} грн";
         }
